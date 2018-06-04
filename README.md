@@ -5,22 +5,20 @@ A Terraform module to create an Amazon Web Services (AWS) Elastic Container Regi
 
 ```hcl
 module "ecr-repository" {
-  source  = "azavea/ecr-repository/aws"
-  version = "0.1.0"
+  source = "github.com/azavea/terraform-aws-ecr-repository?ref=0.1.0"
 
   repository_name = "my-containers"
   
   attach_lifecycle_policy = true
-  max_number_of_images = 7 # expire untagged images older than 7 days
 }
 ```
+
 
 ## Variables
 
 - `repository_name` - name of the repository
-- `attach_lifecycle_policy` - attach a lifecycle policy (default: `false`)
-- `lifecycle_policy` - lifecycle policy JSON (default: `${file("${path.module}/templates/default-lifecycle-policy.json.tpl")}`)
-- `max_number_of_images` - if `attach_lifecycle_policy` is `true` and `lifecycle_policy` has not been set, this variable expires untagged images older than N days (default: `7`)
+- `attach_lifecycle_policy` - attach an [ECR lifecycle policy](https://docs.aws.amazon.com/AmazonECR/latest/userguide/LifecyclePolicies.html) (default: `false`)
+- `lifecycle_policy` - ECR lifecycle policy (default: the contents of `default-lifecycle-policy.json.tpl`, untagged images older than 7 days will be deleted)
 
 ## Outputs
 

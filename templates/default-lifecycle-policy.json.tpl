@@ -2,11 +2,11 @@
     "rules": [
         {
             "rulePriority": 1,
-            "description": "Expire untagged images older than ${days_to_retain_images} day(s)",
+            "description": "Expire untagged images older than 7 days",
             "selection": {
                 "tagStatus": "untagged",
                 "countType": "sinceImagePushed",
-                "countNumber": ${days_to_retain_images},
+                "countNumber": 7,
                 "countUnit": "days"
             },
             "action": {

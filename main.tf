@@ -10,10 +10,6 @@ data "template_file" "lifecycle_policy" {
   count = "${var.attach_lifecycle_policy ? 1 : 0}"
 
   template = "${var.lifecycle_policy != "" ? var.lifecycle_policy : file("${path.module}/templates/default-lifecycle-policy.json.tpl")}"
-
-  vars = {
-    days_to_retain_images = "${var.days_to_retain_images}"
-  }
 }
 
 resource "aws_ecr_lifecycle_policy" "default" {
