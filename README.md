@@ -1,4 +1,7 @@
 # terraform-aws-ecr-repository
+
+[![CircleCI](https://circleci.com/gh/azavea/terraform-aws-ecr-repository.svg?style=svg)](https://circleci.com/gh/azavea/terraform-aws-ecr-repository)
+
 A Terraform module to create an Amazon Web Services (AWS) Elastic Container Registry (ECR) repository.
 
 ## Usage
