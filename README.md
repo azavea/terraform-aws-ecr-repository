@@ -19,7 +19,7 @@ module "ecr-repository" {
 ## Variables
 
 - `repository_name` - Name of the repository
-- `attach_lifecycle_policy` - If true, an an [ECR lifecycle policy](https://docs.aws.amazon.com/AmazonECR/latest/userguide/LifecyclePolicies.html) will be attached (default: `false`)
+- `attach_lifecycle_policy` - If true, an [ECR lifecycle policy](https://docs.aws.amazon.com/AmazonECR/latest/userguide/LifecyclePolicies.html) will be attached (default: `false`)
 - `lifecycle_policy` - Contents of the ECR lifecycle policy (default: contents of `default-lifecycle-policy.json.tpl`, untagged images older than 7 days will be deleted)
 
 ## Outputs

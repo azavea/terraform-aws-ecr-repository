@@ -6,7 +6,7 @@ variable "repository_name" {
 variable "attach_lifecycle_policy" {
   default     = false
   type        = bool
-  description = "If true, an an ECR lifecycle policy will be attached"
+  description = "If true, an ECR lifecycle policy will be attached"
 }
 
 variable "lifecycle_policy" {
